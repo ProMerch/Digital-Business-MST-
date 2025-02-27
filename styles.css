@@ -1,0 +1,413 @@
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Шапка */
+header {
+  background: #222222; /* Новый цвет фона */
+  color: #ffffff; /* Белый цвет текста */
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+header.scrolled {
+  background: #222222; /* Цвет фона при скролле */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: #ffffff; /* Белый цвет текста */
+  text-decoration: none;
+}
+
+/* Секция Hero */
+.hero {
+  padding: 100px 0;
+  background: #222222; /* Цвет фона */
+  color: #ffffff; /* Белый цвет текста */
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right; /* Выравниваем изображение по правому краю */
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Добавим скругление для красоты */
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  color: #ffffff; /* Белый цвет текста */
+}
+
+.hero-text h3 {
+  font-size: 2rem;
+  color: #ffffff; /* Белый цвет текста */
+  margin-top: 0.5rem;
+}
+
+.hero-text h4 {
+  font-size: 1.5rem;
+  color: #ffffff; /* Белый цвет текста */
+  margin-top: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  color: #ffffff; /* Белый цвет текста */
+  margin-top: 1rem;
+  padding-left: 30px; /* Отступ для иконки */
+  position: relative; /* Для псевдоэлемента */
+}
+
+/* Добавляем иконку "galka.png" перед каждым параграфом */
+.hero-text p::before {
+  content: '';
+  display: inline-block;
+  width: 20px; /* Ширина иконки */
+  height: 20px; /* Высота иконки */
+  background-image: url('img/galka.png'); /* Путь к изображению */
+  background-size: cover; /* Масштабируем иконку */
+  position: absolute;
+  left: 0; /* Позиционируем слева */
+  top: 50%; /* Выравниваем по вертикали */
+  transform: translateY(-50%); /* Центрируем по вертикали */
+}
+
+/* Секция Content */
+.content {
+  padding: 2rem 0;
+  background: #282829; /* Цвет фона */
+  color: #ffffff; /* Белый цвет текста */
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content-image {
+  flex: 1;
+}
+
+.content-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Добавим скругление для красоты */
+}
+
+.content-text {
+  flex: 1;
+  text-align: left; /* Выравниваем текст слева-направо */
+}
+
+/* Стили для текста в секции Content */
+.content-text p {
+  font-size: 1rem;
+  color: #ffffff; /* Белый цвет текста */
+  margin-top: 1rem;
+  padding-left: 30px; /* Отступ для иконки */
+  padding-bottom: 1rem; /* Отступ снизу для линии */
+  position: relative; /* Для псевдоэлемента */
+}
+
+/* Добавляем иконку "korona.png" перед каждым параграфом */
+.content-text p::before {
+  content: '';
+  display: inline-block;
+  width: 20px; /* Ширина иконки */
+  height: 20px; /* Высота иконки */
+  background-image: url('img/korona.png'); /* Путь к изображению */
+  background-size: cover; /* Масштабируем иконку */
+  position: absolute;
+  left: 0; /* Позиционируем слева */
+  top: 50%; /* Выравниваем по вертикали */
+  transform: translateY(-50%); /* Центрируем по вертикали */
+}
+
+/* Добавляем разделяющую линию после каждого параграфа, кроме последнего */
+.content-text p:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #ffffff; /* Белая линия */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Убираем отступ у последнего параграфа */
+.content-text p:last-child {
+  padding-bottom: 0;
+}
+
+/* Стили для кнопки */
+.order-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.order-button:hover {
+  background: #555;
+}
+
+/* Секция Form */
+.form-section {
+  padding: 4rem 0; /* Увеличиваем отступы сверху и снизу */
+  background: #282829; /* Серый фон секции */
+  text-align: center;
+}
+
+.form-content {
+  max-width: 500px; /* Ширина формы */
+  margin: 0 auto; /* Центрируем форму */
+  padding: 2rem; /* Внутренние отступы */
+  background: #ffffff; /* Белый фон формы */
+  border-radius: 10px; /* Скругление углов */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для выделения формы */
+}
+
+.form-content h2 {
+  font-size: 2rem;
+  color: #333; /* Цвет заголовка */
+  margin-bottom: 0.5rem;
+}
+
+.form-content p {
+  font-size: 1rem;
+  color: #555; /* Цвет текста */
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Расстояние между элементами формы */
+}
+
+form input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc; /* Граница поля ввода */
+  border-radius: 5px; /* Скругление углов */
+  background: #f9f9f9; /* Светлый фон поля ввода */
+}
+
+form input::placeholder {
+  color: #999; /* Цвет плейсхолдера */
+}
+
+.privacy-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.privacy-checkbox label {
+  font-size: 0.9rem;
+  color: #555; /* Цвет текста */
+}
+
+.privacy-checkbox a {
+  color: #333; /* Цвет ссылки */
+  text-decoration: underline;
+}
+
+form button {
+  padding: 0.75rem;
+  background: #333; /* Цвет кнопки */
+  color: #fff; /* Цвет текста кнопки */
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #555; /* Цвет кнопки при наведении */
+}
+
+/* Футер */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-middle {
+  margin-bottom: 1.5rem;
+}
+
+.footer-lines {
+  height: 1px;
+  background: #555;
+  margin: 1rem auto;
+  width: 80%;
+}
+
+.footer-text {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Расстояние между словами */
+  padding: 1rem 0;
+}
+
+.footer-text span {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 0 0.5rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    order: -1; /* Изображение будет сверху на мобильных устройствах */
+    text-align: center; /* Центрируем изображение на мобильных */
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .content-image {
+    order: -1; /* Изображения будут сверху на мобильных устройствах */
+  }
+
+  .content-text {
+    order: 1; /* Текст будет посередине */
+  }
+
+  .footer-text {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-lines {
+    width: 100%;
+  }
+/* Стили для иконок соцсетей */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Расстояние между иконками */
+  margin: 1.5rem 0; /* Отступ сверху и снизу */
+}
+
+.footer-social a {
+  display: inline-block;
+  transition: opacity 0.3s; /* Плавное изменение прозрачности */
+}
+
+.footer-social a:hover {
+  opacity: 0.7; /* Эффект при наведении */
+}
+
+.footer-social img {
+  width: 24px; /* Размер иконок */
+  height: 24px;
+}
+
+}
+
+@media (max-width: 320px) {
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+  .hero-text h3 {
+    font-size: 1.2rem;
+  }
+  .hero-text h4 {
+    font-size: 1rem;
+  }
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+}
+
+
